@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Snapshot for JCR Chaitanya School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@500&family=Satoshi:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e6276a;
+            --gradient-color: linear-gradient(90deg, #250D37 0%, #511F77 100%);
+            --white-color: #fff;
+            --black-color: #000;
+            --success-color: #28a745;
+            --gray-color: #6c757d;
+        }
+
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--black-color);
+            background-color: var(--white-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-color);
+            color: var(--white-color);
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        /* Challenges Section */
+        .challenges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .challenge-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+       .challenge-card p {
+            font-style: italic;
+            color: var(--gray-color);
+            margin: 0;
+        }
+
+        /* Today vs Tomorrow */
+        .today-tomorrow {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .today-tomorrow div {
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .today {
+            background-color: #f8f9fa;
+            color: var(--gray-color);
+            border: 1px solid #eee;
+        }
+
+        .tomorrow {
+            background: var(--gradient-color);
+            color: var(--white-color);
+        }
+
+        .tomorrow h3 {
+            color: var(--white-color);
+        }
+
+        .today ul, .tomorrow ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .today li, .tomorrow li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .today li::before, .tomorrow li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Key Wins */
+        .key-wins {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .key-win-card {
+            background-color: var(--white-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .key-win-card svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            fill: var(--primary-color);
+        }
+
+        /* Demo Reminder */
+        .demo-reminder {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .demo-reminder a {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--white-color);
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .demo-reminder .add-to-calendar {
+            background-color: var(--success-color);
+        }
+
+        .demo-reminder .join-demo {
+            background: var(--gradient-color);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--gray-color);
+        }
+        footer img {
+            max-height: 40px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .today-tomorrow {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section (schoolName, demoDate, demoTime) -->
+        <div class="hero">
+            <h1>Future Snapshot for JCR Chaitanya School</h1>
+            <p>Exclusive preview ahead of your demo on 09/09/2025 at 3:00 PM</p>
+        </div>
+
+        <!-- Challenges Section (promiseReply, twoDaysReply, oneDayReply; fallback if empty) -->
+        <section class="challenges">
+            <div class="challenge-card">
+                <p>"Our school wants to use AI to increase our school reputation"</p>
+            </div>
+            <div class="challenge-card">
+                <p>"🎯 P Prudvinath, JCR Chaitanya School's reputation BOOST on 09/09 at 3 PM!"</p>
+            </div>
+            <div class="challenge-card">
+                 <p>Teachers losing HOURS on admin and lesson prep.</p>
+            </div>
+        </section>
+
+        <!-- Today vs Tomorrow -->
+        <section class="today-tomorrow">
+            <div class="today">
+                <h3>Today</h3>
+                <ul>
+                    <li>Time-consuming manual tasks</li>
+                    <li>Limited personalized learning</li>
+                    <li>Slow feedback loops</li>
+                </ul>
+            </div>
+            <div class="tomorrow">
+                <h3>Tomorrow with AI</h3>
+                <ul>
+                    <li>Automated admin tasks: 5 hrs/week saved</li>
+                    <li>Personalized learning paths for every student</li>
+                    <li>Instant feedback and progress tracking</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Wins -->
+        <section class="key-wins">
+            <div class="key-win-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20h4V4h-4v16Zm-6 0h4V8H4v12Zm12 0h4v-8h-4v8Z"/></svg>
+                <p>Boost Efficiency by 30%</p>
+            </div>
+            <div class="key-win-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 7h-2v5H9v2h6V7Zm8-5H3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1Zm-1 16H4V4h16v12Z"/></svg>
+                <p>Elevate Learning Outcomes</p>
+            </div>
+            <div class="key-win-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 18v2h20v-2H2Zm6-7c0-3.3 2.7-6 6-6s6 2.7 6 6v5H8v-5Zm6 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg>
+                <p>Increase Student Engagement</p>
+            </div>
+        </section>
+
+        <!-- Demo Reminder (meetingLink, meetingPassword, demoDate, demoTime) -->
+        <section class="demo-reminder">
+            <p>Meeting Link: <a href="https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1" target="_blank">https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1</a></p>
+            <p>Password: bmutd3</p>
+            <a href="#" class="add-to-calendar" id="addToCalendar">➕ Add to Calendar</a>
+            <a href="https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1" class="join-demo" target="_blank">🚀 Join Demo</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+           <img src="https://harsha91544.github.io/AIReadyLP/logo.avif" alt="School Logo" />
+            <p>Built in partnership with schools like yours</p>
+            <p style="font-style: italic; font-size: 0.9em;">"A game-changer for our students' success."</p>
+        </footer>
+    </div>
+
+    <script>
+        // Analytics Beacon
+        console.log("snapshot viewed: jcr-chaitanya-0909");
+        // new Image().src = 'https://example.com/track?id=jcr-chaitanya-0909';
+
+        document.getElementById('addToCalendar').addEventListener('click', function(e) {
+            e.preventDefault();
+
+            const schoolName = 'JCR Chaitanya School';
+            const demoDate = '09/09/2025';
+            const demoTime = '3:00 PM';
+
+            // Convert to UTC
+            const dateParts = demoDate.split('/');
+            const timeParts = demoTime.split(':');
+            let year = parseInt(dateParts[2]);
+            let month = parseInt(dateParts[0]) - 1; // Month is 0-indexed
+            let day = parseInt(dateParts[1]);
+            let hour = parseInt(timeParts[0]);
+            let minute = parseInt(timeParts[1]);
+
+            // Create Date object (IST offset is +5:30)
+            let eventDate = new Date(Date.UTC(year, month, day, hour + 5, minute + 30));
+
+            let start = eventDate.toISOString().replace(/-|:|\.\d+/g, '');
+
+            eventDate.setHours(eventDate.getHours() + 1);
+            let end = eventDate.toISOString().replace(/-|:|\.\d+/g, '');
+
+            const event = {
+                title: 'AI Ready School Demo for ' + schoolName,
+                start: start,
+                end: end,
+                description: 'AI Ready School Demo - Join us to see how AI can transform your school!',
+                location: 'Zoom Meeting',
+                url: 'https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1'
+            };
+          
+            const googleCalendarUrl = encodeURI([
+                'https://www.google.com/calendar/render',
+                '?action=TEMPLATE',
+                '&text=' + event.title,
+                '&dates=' + event.start + '/' + event.end,
+                '&details=' + event.description,
+                '&location=' + event.location,
+                '&sprop=&sprop=name:'
+            ].join(''));
+
+            this.href = googleCalendarUrl;
+
+            // Create .ics file content
+            let icsFileContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Your Company//Your App//EN',
+                'CALSCALE:GREGORIAN',
+                'BEGIN:VEVENT',
+                'DTSTART:' + event.start,
+                'DTEND:' + event.end,
+                'SUMMARY:' + event.title,
+                'DESCRIPTION:' + event.description + '\\n\\nJoin Zoom Meeting: ' + event.url,
+                'LOCATION:' + event.location,
+                'UID:' + Math.random().toString(36).substring(2, 15),
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            // Trigger .ics file download
+            let blob = new Blob([icsFileContent], { type: 'text/calendar;charset=utf-8' });
+            let url = URL.createObjectURL(blob);
+            let link = document.createElement('a');
+            link.href = url;
+            link.download = 'ai_demo_' + schoolName.replace(/\s/g, '_').toLowerCase() + '.ics';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
