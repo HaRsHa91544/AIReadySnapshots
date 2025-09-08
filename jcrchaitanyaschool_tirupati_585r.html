@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Snapshot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e6276a;
+            --gradient-color: linear-gradient(90deg, #250D37 0%, #511F77 100%);
+            --white-color: #fff;
+            --black-color: #000;
+            --success-color: #28a745;
+        }
+
+        body {
+            font-family: 'Satoshi', sans-serif; /* Fallback to system sans-serif */
+            margin: 0;
+            padding: 0;
+            color: var(--black-color);
+            background-color: var(--white-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-color);
+            color: var(--white-color);
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        /* Current Challenges Section */
+        .challenges {
+            margin-bottom: 30px;
+        }
+
+        .challenges h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .challenge-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+
+        .challenge-card p {
+            font-size: 1rem;
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Today vs Tomorrow Section */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .comparison-card {
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .comparison-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .comparison-card li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .comparison-card li::before {
+            content: '●';
+            color: inherit;
+            margin-right: 8px;
+        }
+
+        .today {
+            background-color: #f2f2f2;
+            color: #777;
+        }
+
+        .tomorrow {
+            background: var(--gradient-color);
+            color: var(--white-color);
+        }
+
+        /* Key Wins Section */
+        .key-wins {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .win-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .win-card svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            fill: var(--primary-color);
+        }
+
+        .win-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .win-card p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Demo Reminder Section */
+        .demo-reminder {
+            background-color: #f0f8ff;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .demo-reminder h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .demo-reminder p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .demo-reminder a {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--white-color);
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+        }
+
+        .demo-reminder .add-to-calendar {
+            background-color: var(--success-color);
+        }
+
+        .demo-reminder .join-demo {
+            background: var(--gradient-color);
+        }
+
+        .demo-reminder a:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        footer img {
+            max-width: 150px;
+            height: auto;
+            margin-top: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+
+            .key-wins {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+
+        /* Accessibility */
+        button {
+            cursor: pointer;
+        }
+
+        /* No Motion Preference */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Future Snapshot for JCR Chaitanya School, Tirupati</h1> <!-- schoolName, city -->
+            <p>Exclusive preview ahead of your demo on 09/09/2025 at 3:00 PM</p>  <!-- demoDate, demoTime -->
+        </section>
+
+        <!-- Current Challenges Section -->
+        <section class="challenges">
+            <h2>Current Challenges</h2>
+            <div class="challenge-card">
+                <p>"Our school wants to use AI to increase our school reputation"</p> <!-- promiseReply -->
+            </div>
+            <div class="challenge-card">
+                <p>"🎯 P Prudvinath, JCR Chaitanya School's reputation BOOST on 09/09 at 3 PM!"</p> <!-- twoDaysReply -->
+            </div>
+            <div class="challenge-card">
+                <p>Teachers losing HOURS on admin and lesson prep.</p> <!-- Fallback -->
+            </div>
+        </section>
+
+        <!-- Today vs Tomorrow Section -->
+        <section class="comparison">
+            <div class="comparison-card today">
+                <h3>Today</h3>
+                <ul>
+                    <li>Teachers buried in paperwork</li>
+                    <li>Generic, one-size-fits-all learning</li>
+                    <li>Delayed feedback for students</li>
+                </ul>
+            </div>
+            <div class="comparison-card tomorrow">
+                <h3>Tomorrow with AI</h3>
+                <ul>
+                    <li>5 hrs/week saved on admin tasks</li>
+                    <li>Personalized learning paths for every student</li>
+                    <li>Instant feedback and progress tracking</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Wins Section -->
+        <section class="key-wins">
+            <div class="win-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+                <h3>Efficiency</h3>
+                <p>Automate routine tasks and save time.</p>
+            </div>
+            <div class="win-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4z"/></svg>
+                <h3>Learning</h3>
+                <p>Personalized education for every student.</p>
+            </div>
+            <div class="win-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 6h-8l-2-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8c0-1.11-.89-2-2-2m0 12H4V8h16z"/></svg>
+                <h3>Engagement</h3>
+                <p>Boost student and teacher involvement.</p>
+            </div>
+        </section>
+
+        <!-- Demo Reminder Section -->
+        <section class="demo-reminder">
+            <h2>Demo Reminder</h2>
+            <p>Meeting Link: <a href="https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1" target="_blank">https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1</a></p>  <!-- meetingLink -->
+            <p>Password: bmutd3</p> <!-- meetingPassword -->
+            <button class="add-to-calendar" aria-label="Add to Calendar" id="addToCalendarBtn">➕ Add to Calendar</button>
+            <a href="https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1" class="join-demo" target="_blank">🚀 Join Demo</a> <!-- meetingLink -->
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>Built in partnership with schools like yours</p>
+            <img src="https://harsha91544.github.io/AIReadyLP/logo.avif" alt="School Logo"> <!-- logoUrl -->
+        </footer>
+    </div>
+
+    <script>
+        console.log("snapshot viewed: jcr-chaitanya-0909");
+        // new Image().src = 'https://example.com/track?id=jcr-chaitanya-0909';
+
+        document.getElementById('addToCalendarBtn').addEventListener('click', function() {
+            const schoolName = 'JCR Chaitanya School'; // schoolName
+            const demoDate = '09/09/2025'; // demoDate
+            const demoTime = '3:00 PM'; // demoTime
+            const meetingLink = 'https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1';  // meetingLink
+            const meetingPassword = 'bmutd3'; // meetingPassword
+
+            // Convert date and time to UTC
+            const dateParts = demoDate.split('/');
+            const timeParts = demoTime.split(/:| /);
+            let hour = parseInt(timeParts[0]);
+            const minute = parseInt(timeParts[1]);
+            const ampm = timeParts[2];
+
+            if (ampm && ampm.toUpperCase() === 'PM' && hour < 12) {
+                hour += 12;
+            } else if (ampm && ampm.toUpperCase() === 'AM' && hour === 12) {
+                hour = 0;
+            }
+
+            const year = parseInt(dateParts[2]);
+            const month = parseInt(dateParts[0]) - 1; // Month is 0-indexed
+            const day = parseInt(dateParts[1]);
+
+            // Convert IST to UTC (IST is UTC+5:30)
+            let utcHour = hour - 5;
+            let utcMinute = minute - 30;
+            let utcDay = day;
+
+            if (utcMinute < 0) {
+                utcMinute += 60;
+                utcHour -= 1;
+            }
+
+            if (utcHour < 0) {
+                utcHour += 24;
+                utcDay -= 1;
+            }
+
+            let startDate = new Date(Date.UTC(year, month, utcDay, utcHour, utcMinute, 0));
+            let endDate = new Date(Date.UTC(year, month, utcDay, utcHour + 1, utcMinute, 0)); // Assuming 1 hour demo
+
+            const startDateFormatted = startDate.toISOString().replace(/-|:|\.\d+/g, '');
+            const endDateFormatted = endDate.toISOString().replace(/-|:|\.\d+/g, '');
+
+            // Google Calendar link
+            const googleCalendarLink = encodeURI([
+                'https://calendar.google.com/calendar/render',
+                '?action=TEMPLATE',
+                '&text=' + schoolName + ' AI Demo',
+                '&dates=' + startDateFormatted + '/' + endDateFormatted,
+                '&details=Join the AI Demo: ' + meetingLink + '%0APassword: ' + meetingPassword,
+                '&location=Zoom Meeting',
+                '&sprop=&sprop=name:' + schoolName
+            ].join(''));
+
+            // .ics file content
+            const icsContent = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//Your Company//Your App//EN',
+                'BEGIN:VEVENT',
+                'UID:' + Date.now() + '@example.com',
+                'DTSTAMP:' + startDateFormatted,
+                'DTSTART:' + startDateFormatted,
+                'DTEND:' + endDateFormatted,
+                'SUMMARY:' + schoolName + ' AI Demo',
+                'LOCATION:Zoom Meeting',
+                'DESCRIPTION:Join the AI Demo: ' + meetingLink + '\\nPassword: ' + meetingPassword,
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ].join('\r\n');
+
+            // Create a download link for .ics file
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = url;
+            downloadLink.download = schoolName.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '_demo.ics';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            URL.revokeObjectURL(url);
+
+
+            window.open(googleCalendarLink, '_blank');
+        });
+    </script>
+</body>
+</html>
