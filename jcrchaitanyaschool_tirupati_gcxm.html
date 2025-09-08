@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Snapshot - AI Ready School</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Satoshi:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e6276a;
+            --gradient-color: linear-gradient(90deg, #250D37 0%, #511F77 100%);
+            --white-color: #fff;
+            --green-color: #28a745;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+        }
+
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-color);
+            color: var(--white-color);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Challenges Section */
+        .challenges {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .challenge-card {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .challenge-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .challenge-card p {
+            font-size: 0.9rem;
+        }
+
+        .challenge-card svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            fill: var(--primary-color);
+        }
+
+        /* AI Future Section */
+        .ai-future {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .ai-future-card {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .ai-future-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .ai-future-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .ai-future-card p {
+            font-size: 0.9rem;
+        }
+
+        .ai-future-card svg {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+            fill: var(--primary-color);
+        }
+
+        /* Big Wins Section */
+        .big-wins {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .big-win-card {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .big-win-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .big-win-card h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .big-win-card svg {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 10px;
+            fill: var(--primary-color);
+        }
+
+        /* Demo Reminder Section */
+        .demo-reminder {
+            background-color: var(--light-gray);
+            padding: 30px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .demo-reminder h2 {
+            font-family: 'Clash Display', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .demo-reminder p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .demo-reminder .button {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            font-family: 'Satoshi', sans-serif;
+        }
+
+        .demo-reminder .add-to-calendar {
+            background-color: var(--green-color);
+            color: var(--white-color);
+            margin-right: 10px;
+        }
+
+        .demo-reminder .join-demo {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        .demo-reminder .button:hover {
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .logo {
+            max-width: 150px;
+            margin: 0 auto 10px;
+            display: block;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .challenges,
+            .ai-future,
+            .big-wins {
+                grid-template-columns: 1fr;
+            }
+
+            .demo-reminder .add-to-calendar,
+            .demo-reminder .join-demo {
+                display: block;
+                margin: 10px auto;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Future Snapshot for <span id="schoolNamePlaceholder"><!-- School Name --></span>, <span id="cityPlaceholder"><!-- City --></span></h1>
+            <p>Demo on <span id="demoDatePlaceholder"><!-- Demo Date --></span> at <span id="demoTimePlaceholder"><!-- Demo Time --></span></p>
+        </section>
+
+        <!-- Current Challenges -->
+        <section class="challenges">
+            <div class="challenge-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V5h2v4z"/></svg>
+                <h3>Challenge 1</h3>
+                <p id="challenge1Placeholder">Teacher time wasted on admin</p>
+            </div>
+
+            <div class="challenge-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2V9h-2v8zm0-6h2V5h-2v4z"/></svg>
+                <h3>Challenge 2</h3>
+                 <p id="challenge2Placeholder">Lack of personalized learning</p>
+            </div>
+
+            <div class="challenge-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2V9h-2v8zm0-6h2V5h-2v4z"/></svg>
+                <h3>Challenge 3</h3>
+                <p id="challenge3Placeholder">Manual grading delays</p>
+            </div>
+        </section>
+
+        <!-- AI-Powered Future -->
+        <section class="ai-future">
+            <div class="ai-future-card">
+                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19 8l-4 4h3c0 1.1-.9 2-2 2v3h-2v-3c-1.1 0-2-.9-2-2h3l-4-4c-1.39 1.66-2.25 3.74-2.25 6 0 4.42 3.58 8 8 8s8-3.58 8-8c0-2.26-.86-4.34-2.25-6zM12 4V1l-2 3 2 3V4c1.1 0 2 .9 2 2h3l-4 4 4 4h-3c0 1.1.9 2 2 2v3l2-3-2-3v4c-1.1 0-2-.9-2-2h-3l4-4-4-4h3c0-1.1-.9-2-2-2V1l-2 3z"/></svg>
+                <h3>Teacher Time Saved</h3>
+                <p>~5 hrs/week saved</p>
+            </div>
+
+            <div class="ai-future-card">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-8c.39 0 .75.11 1.03.31l3.77 2.83 2.83-3.77c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l-2.83 3.77-3.77-2.83c-.2-.28-.31-.64-.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-2.83c.2-.28.31-.64.31-1.03 0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5c0 .39.11.75.31 1.03l2.83 3.77 3.77-
