@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Snapshot - AI Ready School</title>
+    <style>
+        /* Font Imports (Inline for simplicity) */
+        @font-face {
+            font-family: 'Clash Display';
+            src: url('https://harsha91544.github.io/AIReadyLP/ClashDisplay-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Satoshi';
+            src: url('https://harsha91544.github.io/AIReadyLP/Satoshi-Regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Color Palette */
+        :root {
+            --primary-color: #e6276a;
+            --gradient-start: #250D37;
+            --gradient-end: #511F77;
+            --white: #ffffff;
+            --gray-light: #f2f2f2;
+            --gray-medium: #999999;
+            --gray-dark: #333333;
+        }
+
+        /* Basic Reset & Typography */
+        body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--gray-dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Clash Display', sans-serif;
+            font-weight: bold;
+            color: var(--gradient-end);
+            margin-bottom: 0.5em;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 1.75rem; }
+        h3 { font-size: 1.25rem; }
+
+        p {
+            margin-bottom: 1em;
+            font-size: 1rem;
+        }
+
+        /* Layout & Structure */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            padding: 3rem 0;
+            position: relative; /* For gradient dividers */
+        }
+
+        /* Gradient Divider */
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        }
+
+        section:last-child::after {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(37, 13, 55, 0.8), rgba(81, 31, 119, 0.8)), url('https://harsha91544.github.io/AIReadyLP/hero-bg.jpg'); /* Replace with a real image! */
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+        }
+
+        .hero h1, .hero h2 {
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.25em;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: normal;
+            margin-bottom: 1.5em;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+       .btn-primary:hover {
+            background-color: #c41d57;
+        }
+
+        .btn-secondary {
+            background-color: #4CAF50; /* Green */
+            color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background-color: #367C39;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 75px;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        /* AI Powered Future */
+        .ai-future {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .ai-future > div {
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .ai-future .challenge {
+            background-color: #eee;
+            color: var(--gray-medium);
+        }
+
+        .ai-future .solution {
+            background: linear-gradient(to bottom, rgba(81, 31, 119, 0.1), rgba(37, 13, 55, 0.1));
+        }
+
+        .ai-future h3 {
+            color: var(--gray-dark);
+        }
+
+        /* Key Wins */
+        .win-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .win-card {
+            background-color: var(--white);
+            border: 1px solid var(--gray-light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .win-card img {
+            max-width: 60px;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Demo Reminder */
+        .demo-reminder {
+            text-align: center;
+            background-color: var(--gray-light);
+            padding: 3rem 0;
+            border-radius: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--gray-medium);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .ai-future {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 0.5rem 0;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Future Snapshot for <span id="schoolName">{schoolName}</span>, <span id="city">{city}</span></h1>
+            <h2>Your exclusive preview ahead of the demo on <span id="demoDate">{demoDate}</span> at <span id="demoTime">{demoTime}</span></h2>
+            <a href="<span id="meetingLink">{meetingLink}</span>" class="btn btn-primary">Join Demo</a>
+            <a href="#" class="btn btn-secondary">➕ Add to Calendar</a> <!-- Implement Calendar Functionality -->
+        </section>
+
+        <!-- Current Challenges -->
+        <section>
+            <h2>Understanding Your Challenges</h2>
+            <div class="card-grid">
+                <div class="card">
+                   <img src="https://harsha91544.github.io/AIReadyLP/teacher.svg" alt="Teacher Icon">
+                    <h3>Teacher Time Drain</h3>
+                    <p>Time spent on admin tasks instead of teaching.</p> <!-- Dynamic Replacement 1 -->
+                </div>
+                <div class="card">
+                   <img src="https://harsha91544.github.io/AIReadyLP/personalized.svg" alt="Personalized Icon">
+                    <h3>Personalization Gap</h3>
+                    <p>Difficulty in providing personalized learning paths.</p> <!-- Dynamic Replacement 2 -->
+                </div>
+                <div class="card">
+                    <img src="https://harsha91544.github.io/AIReadyLP/parent.svg" alt="Parent Icon">
+                    <h3>Parent Communication Lag</h3>
+                    <p>Delays in keeping parents informed and engaged.</p> <!-- Dynamic Replacement 3 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- AI-Powered Future -->
+        <section>
+            <h2>Today vs. AI-Powered Tomorrow</h2>
+            <div class="ai-future">
+                <div class="challenge">
+                    <h3>Today</h3>
+                    <p>Struggling to keep up with growing admin workload.</p>
+                </div>
+                <div class="solution">
+                    <h3>Tomorrow</h3>
+                    <h3>AI-Driven Efficiency</h3>
+                    <p>Automated tasks, freeing up teachers' time.</p>
+                </div>
+                 <div class="challenge">
+                    <h3>Today</h3>
+                     <p>Generic curriculum that fails to engage all learners.</p>
+                </div>
+                <div class="solution">
+                    <h3>Tomorrow</h3>
+                    <h3>Personalized Learning</h3>
+                    <p>Customized learning paths based on student needs.</p>
+                </div>
+
+                 <div class="challenge">
+                    <h3>Today</h3>
+                    <p>Parents feel disconnected from their child's education.</p>
+                </div>
+                <div class="solution">
+                    <h3>Tomorrow</h3>
+                    <h3>Seamless Communication</h3>
+                    <p>Instant updates and feedback for parents.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Key Wins -->
+        <section>
+            <h2>Unlock Key Wins with AI</h2>
+            <div class="win-grid">
+                <div class="win-card">
+                    <img src="https://harsha91544.github.io/AIReadyLP/clock.svg" alt="Clock Icon">
+                    <h3>Efficiency Boost</h3>
+                    <p>Teachers save up to <b>20%</b> of their time.</p>
+                </div>
+                <div class="win-card">
+                   <img src="https://harsha91544.github.io/AIReadyLP/graduation.svg" alt="Graduation Icon">
+                    <h3>Learning Acceleration</h3>
+                    <p>Students progress <b>15%</b> faster.</p>
+                </div>
+                <div class="win-card">
+                    <img src="https://harsha91544.github.io/AIReadyLP/chat.svg" alt="Chat Icon">
+                    <h3>Parent Engagement</h3>
+                    <p>Parent involvement increases by <b>30%</b>.</p>
+                </div>
+                 <div class="win-card">
+                    <img src="https://harsha91544.github.io/AIReadyLP/reputation.svg" alt="Reputation Icon">
+                    <h3>Reputation Growth</h3>
+                    <p><b>25%</b> lift in positive parent feedback.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Reminder -->
+        <section class="demo-reminder">
+            <h2>Don't Miss Your Demo!</h2>
+            <p>Join us on <span id="demoDateReminder">{demoDate}</span> at <span id="demoTimeReminder">{demoTime}</span>.</p>
+            <a href="#" class="btn btn-secondary">➕ Add to Calendar</a>
+            <a href="<span id="meetingLinkReminder">{meetingLink}</span>" class="btn btn-primary">🚀 Join Demo</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Built in partnership with schools like yours.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Dynamic Content Replacement
+        document.getElementById('schoolName').textContent = 'JCR Chaitanya School'; //DYNAMICALLY_REPLACE schoolName
+        document.getElementById('city').textContent = 'Tirupati'; //DYNAMICALLY_REPLACE city
+        document.getElementById('demoDate').textContent = '09/09/2025'; //DYNAMICALLY_REPLACE demoDate
+        document.getElementById('demoTime').textContent = '3:00 PM'; //DYNAMICALLY_REPLACE demoTime
+        document.getElementById('meetingLink').href = 'https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1'; //DYNAMICALLY_REPLACE meetingLink
+        document.getElementById('demoDateReminder').textContent = '09/09/2025';  //DYNAMICALLY_REPLACE demoDate
+        document.getElementById('demoTimeReminder').textContent = '3:00 PM';  //DYNAMICALLY_REPLACE demoTime
+        document.getElementById('meetingLinkReminder').href = 'https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1'; //DYNAMICALLY_REPLACE meetingLink
+
+
+        // Add-to-Calendar Functionality (Basic Placeholder)
+        const addToCalendarButtons = document.querySelectorAll('.btn-secondary'); // Use a class to select the buttons
+
+        addToCalendarButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                alert('Add to Calendar functionality will be implemented here.');
+                // In a real implementation, you'd generate a .ics file or a Google Calendar link.
+            });
+        });
+    </script>
+</body>
+</html>
