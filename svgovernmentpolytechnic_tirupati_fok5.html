@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SV government Polytechnic's Future Snapshot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles from your landing page */
+        :root {
+            --color-primary: #e6276a;
+            --color-background-start: #250D37;
+            --color-background-end: #511F77;
+            --color-white: #fff;
+            --color-text-dark: #250D37;
+            --color-light-grey: #f4f7f9;
+            --color-mid-grey: #e0e0e0;
+            --color-cta-hover-lines: rgba(255, 255, 255, 0.4);
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 64px;
+            --border-radius-sharp: 5px;
+            --highlight-gradient: linear-gradient(90deg, #ff9933 0%, #e6276a 100%);
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Highlighted text within headings */
+        .highlighted-text {
+            background: var(--highlight-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section - Keep Dark */
+        .hero-section {
+            background: linear-gradient(135deg, var(--color-background-start), var(--color-background-end));
+            color: var(--color-white);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+            padding-bottom: var(--spacing-xl);
+        }
+
+        .hero-headline {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .hero-subheadline {
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            opacity: 0.8;
+            margin: var(--spacing-sm) auto var(--spacing-lg);
+            max-width: 700px;
+        }
+
+        /* Commitment Section - Make White */
+        .commitment-section {
+            padding: var(--spacing-xl) 0;
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+        }
+
+        .commitment-container {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .commitment-headline {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .commitment-card {
+            background: var(--color-light-grey);
+            padding: var(--spacing-lg);
+            border-radius: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            border: 1px solid var(--color-mid-grey);
+            color: var(--color-text-dark);
+        }
+
+        .commitment-quote {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1rem, 1.5vw, 1.25rem);
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        .commitment-author {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: var(--spacing-xs);
+        }
+
+        .commitment-note {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Challenges & Transformation - Redesigned */
+        .content-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--color-white);
+            color: var(--color-text-dark);
+        }
+
+        .content-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-headline {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .list-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .list-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* New Styles for Centering 3rd Card */
+        @media (min-width: 768px) {
+
+            .list-grid.challenges .list-item:nth-child(3),
+            .list-grid.transformation .list-item:nth-child(3) {
+                grid-column: span 2;
+                max-width: 50%;
+                justify-self: center;
+                margin: 0 auto;
+            }
+        }
+
+
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            border-radius: var(--spacing-sm);
+            background-color: var(--color-light-grey);
+            border: 1px solid var(--color-mid-grey);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .list-item:hover {
+            transform: translateY(-5px);
+            background-color: var(--color-mid-grey);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-icon {
+            font-size: 1.8rem;
+            font-weight: bold;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .list-icon.red {
+            color: #dc3545;
+        }
+
+        .list-icon.green {
+            color: #28a745;
+        }
+
+        .list-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(0.9rem, 1.25vw, 1.125rem);
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .section-separator {
+            margin: var(--spacing-xl) 0;
+            height: 1px;
+            background: var(--color-mid-grey);
+            opacity: 0.5;
+        }
+
+        /* New styling for competitive advantage note */
+        .transformation-note.large-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--color-text-dark);
+            font-weight: 600;
+            text-align: center;
+            margin-top: var(--spacing-lg);
+        }
+
+
+        /* Demo Section - Modern & Professional */
+        .demo-section {
+            background: linear-gradient(135deg, var(--color-background-start), var(--color-background-end));
+            color: var(--color-white);
+            text-align: center;
+            padding: var(--spacing-xl) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-card {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-radius: var(--spacing-sm);
+            padding: var(--spacing-lg) var(--spacing-xl);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 650px;
+            margin: 0 auto;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            transition: transform 0.3s ease;
+        }
+
+        .demo-headline {
+            font-weight: 500;
+            font-size: clamp(1.8rem, 2.7vw, 2.5rem);
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+            display: inline-block;
+            font-family: 'Outfit';
+        }
+
+        .demo-detail {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+            margin-bottom: var(--spacing-sm);
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-xs);
+        }
+
+        .demo-detail .icon {
+            font-size: 1.2em;
+            color: var(--color-primary);
+        }
+
+        /* Button Grouping */
+        .demo-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            align-items: center;
+        }
+
+        @media (min-width: 500px) {
+            .demo-buttons {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .add-to-calendar-btn {
+            background: var(--highlight-gradient);
+            color: var(--color-white);
+            border: 1px solid transparent;
+            padding: 14px 28px;
+            border-radius: var(--border-radius-sharp);
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            box-shadow: 0 6px 20px rgba(230, 39, 106, 0.4);
+            transition: box-shadow 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .add-to-calendar-btn:hover {
+            box-shadow: 0 8px 25px rgba(230, 39, 106, 0.6);
+        }
+
+        .join-demo-btn {
+            background: none;
+            border: 1px solid var(--color-white);
+            color: var(--color-white);
+            padding: 14px 28px;
+            border-radius: var(--border-radius-sharp);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .join-demo-btn:hover {
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+        }
+
+        .demo-footer-text {
+            margin-top: var(--spacing-lg);
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        /* Footer - Make White with normal logo */
+        .footer-section {
+            padding: var(--spacing-xl) var(--spacing-sm);
+            background-color: var(--color-white);
+            color: var(--color-text-dark);
+            text-align: center;
+            padding-bottom: 100px;
+        }
+
+        /* New Footer Heading Style */
+        .footer-headline {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.4;
+            font-weight: 400;
+        }
+
+        .footer-logo {
+            height: 50px;
+            filter: none;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .small-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-headline {
+                font-size: 2.5rem;
+            }
+
+            .section-headline {
+                font-size: 2rem;
+            }
+
+            .list-item {
+                font-size: 1rem;
+            }
+
+            .demo-card {
+                padding: var(--spacing-lg) var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-headline">🚀 <span class="highlighted-text">SV government Polytechnic</span> from the Future!
+            </h1>
+            <p class="hero-subheadline">This is your school’s Future Snapshot — a quick peek at what’s possible.</p>
+            <p class="hero-subheadline">We’ll walk you through the full transformation on <span
+                    class="highlighted-text">10/09/2025 at 9:00 AM.</span></p>
+        </div>
+    </section>
+
+    <section class="commitment-section">
+        <div class="container commitment-container">
+            <h2 class="commitment-headline">We Will Align With Your <span class="highlighted-text">Commitment</span>
+            </h2>
+            <div class="commitment-card">
+                <p class="commitment-quote">“Increase somethiny”</p>
+                <p class="commitment-author">— Harsha Vardhan</p>
+            </div>
+            <p class="commitment-note">We’ve taken your vision seriously. This snapshot is built around it.</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container content-container">
+            <h2 class="section-headline">The <span class="highlighted-text">Challenges</span> You’re Facing, Right Now
+            </h2>
+            <div class="list-grid challenges">
+                <div class="list-item">
+                    <span class="list-icon red">❌</span>
+                    <p class="list-text">Students count</p>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon red">❌</span>
+                    <p class="list-text">not good resource founded</p>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon red">❌</span>
+                    <p class="list-text">With AI booming, schools that don’t adapt risk losing 2 out of 5 parents to
+                        AI-ready competitors.</p>
+                </div>
+            </div>
+            <div class="section-separator"></div>
+            <h2 class="section-headline"><span class="highlighted-text">Transformation</span> After Going AI-Ready</h2>
+            <div class="list-grid transformation">
+                <div class="list-item">
+                    <span class="list-icon green">✅</span>
+                    <p class="list-text">Free up 10+ teacher hours per week through AI automation.</p>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon green">✅</span>
+                    <p class="list-text">Boost student enrollment by 15% with targeted marketing and AI-driven resource allocation.</p>
+                </div>
+                <div class="list-item">
+                    <span class="list-icon green">✅</span>
+                    <p class="list-text">Increase grant funding by 20% with AI-assisted proposal writing and optimized resource management.</p>
+                </div>
+            </div>
+            <p class="transformation-note large-text">This isn’t just technology — it’s your competitive advantage.</p>
+        </div>
+    </section>
+
+    <section class="demo-section">
+        <div class="container">
+            <div class="demo-card">
+                <h2 class="demo-headline">Don’t Forget your Demo</h2>
+                <p class="demo-detail"><span class="icon">📅</span> Your personalized walkthrough is coming soon.</p>
+                <p class="demo-detail"><span class="icon">🔑</span> Password: bmutd3</p>
+                <div class="demo-buttons">
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=AI+Ready+School+Demo&dates=20250910T090000Z/20250910T100000Z&details=Your+Zoom+link:+https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1&location=Zoom"
+                        class="add-to-calendar-btn">
+                        <span style="font-size: 1.2rem;">✅</span>
+                        Add to Calendar
+                    </a>
+                    <a href="https://us05web.zoom.us/j/84964085298?pwd=ENffXiA3MkJkebxLZ9DznBXzsQLiBY.1"
+                        class="join-demo-btn">
+                        <span style="font-size: 1.2rem;">➡️</span>
+                        Join Demo
+                    </a>
+                </div>
+                <p class="demo-footer-text">Mark this in now — because missing it means falling behind.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container">
+            <h3 class="footer-headline">This Future Snapshot of SV government Polytechnic is proudly designed by:</h3>
+            <img src="https://harsha91544.github.io/AIReadyLP/logo.avif" alt="AI Ready School Logo" class="footer-logo">
+        </div>
+    </footer>
+
+</body>
+
+</html>
